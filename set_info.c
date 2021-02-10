@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-bool	check_format(const char *str)
+static bool	check_format(const char *str)
 {
 	while (*str == '-' || *str == '0')
 		str++;
@@ -37,7 +37,7 @@ bool	check_format(const char *str)
 	return (ft_is_strchr("%cspdiuxX", *str));
 }
 
-void	set_flag(const char **ptr, t_info *info)
+static void	set_flag(const char **ptr, t_info *info)
 {
 	while (**ptr == '-' || **ptr == '0')
 	{
@@ -52,7 +52,7 @@ void	set_flag(const char **ptr, t_info *info)
 	}
 }
 
-void	set_width(const char **ptr, t_info *info, va_list ap)
+static void	set_width(const char **ptr, t_info *info, va_list ap)
 {
 	int	tmp;
 
@@ -80,7 +80,7 @@ void	set_width(const char **ptr, t_info *info, va_list ap)
 	}
 }
 
-void	set_prec(const char **ptr, t_info *info, va_list ap)
+static void	set_prec(const char **ptr, t_info *info, va_list ap)
 {
 	int	tmp;
 
@@ -108,14 +108,14 @@ void	set_prec(const char **ptr, t_info *info, va_list ap)
 	}
 }
 
-bool	set_info(const char **ptr, t_info *info, va_list ap)
+bool		set_info(const char **ptr, t_info *info, va_list ap)
 {
 	(*ptr)++;
 	if (!check_format(*ptr))
 		return (false);
 	info->zero = false;
 	info->minus = false;
-	info->width = -1;
+	info->width = 0;//0 か 1　か　−１
 	info->dot = false;
 	info->prec = 0;
 	info->spec = 0;
@@ -123,6 +123,8 @@ bool	set_info(const char **ptr, t_info *info, va_list ap)
 	set_width(ptr, info, ap);
 	set_prec(ptr, info, ap);
 	info->spec = **ptr;
-	printf("\nzero: %d\nminus: %d\nwidth: %d\ndot: %d\nprec: %d\nspec: %c\n\n", info->zero, info->minus, info->width, info->dot, info->prec, info->spec);
+	//printf("\nzero: %d\nminus: %d\nwidth: %d\ndot: %d\nprec: %d\nspec: %c\n\n", info->zero, info->minus, info->width, info->dot, info->prec, info->spec);
+	if (info->width == -1 || info->prec == -1)
+		return (false);
 	return (true);
 }

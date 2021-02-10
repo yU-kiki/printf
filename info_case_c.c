@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   info_case_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 15:19:01 by yikeda            #+#    #+#             */
-/*   Updated: 2021/02/10 15:19:01 by yikeda           ###   ########.fr       */
+/*   Created: 2021/02/10 18:01:10 by yikeda            #+#    #+#             */
+/*   Updated: 2021/02/10 18:01:10 by yikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_atoi(const char *str)
+int		info_case_c(char c, t_info info)
 {
-	int				i;
-	unsigned long	ans;
+	int	len;
+	int	space;
 
-	i = 0;
-	ans = 0;
-	while ('0' <= str[i] && str[i] <= '9')
-	{
-		ans = ans * 10 + str[i] - '0';
-		i++;
-		if (ans > 2147483647)
-			return (-1);
-	}
-	return ((int)ans);
+	if (info.width == INT_MAX)
+		return (-1);
+	if (info.zero == true || info.dot == true)
+		return (-1);
+	space = ' ';
+	len = 0;
+	len += (info.minus ? ft_putchar(c) : 0);
+	while (len < (info.minus ? info.width : info.width - 1))
+		len += ft_putchar(space);
+	len += (info.minus ? 0 : ft_putchar(c));
+	return (len);
 }

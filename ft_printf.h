@@ -33,6 +33,7 @@ typedef struct	s_info
 int				ft_printf(const char *fmt, ...);
 
 bool			set_info(const char **ptr, t_info *info, va_list ap);
+int				info_case_c(char c, t_info info);
 
 int				ft_putchar(char c);
 bool			ft_is_strchr(char *str, char c);

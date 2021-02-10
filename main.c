@@ -14,7 +14,18 @@
 
 int		main(void)
 {
-	printf("%%-1.1d");
-	ft_printf("%*.1d", -5);
+	printf("printf(\"%%%%\")\n");
+	int len1 = ft_printf("[%%]");
+	printf("\nlen = %d\n\n", len1);
+
+	printf("printf(\"[%%3c]\", 'a')\n");
+	int len2 = ft_printf("[%3c]", 'a');
+	printf("\nlen = %d\n\n", len2);
+
+
+	printf("printf(\"[%%-3c]\", 'a')\n");
+	int len3 = ft_printf("[%-3c]", 'a');
+	printf("\nlen = %d\n\n", len3);
+
 	return (0);
 }

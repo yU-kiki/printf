@@ -14,11 +14,16 @@
 
 static int	ft_proc_per(const char **ptr, va_list ap)
 {
+	int		len;
 	t_info	info;
 
 	if (!set_info(ptr, &info, ap))
 		return (-1);
-	return (0);
+	if (info.spec == '%')
+		len = info_case_c('%', info);
+	if (info.spec == 'c')
+		len = info_case_c((char)va_arg(ap, int), info);
+	return (len);
 }
 
 int			ft_printf(const char *fmt, ...)
