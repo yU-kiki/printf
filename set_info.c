@@ -33,8 +33,8 @@ bool	check_format(const char *str)
 			while ('0' <= *str && *str <= '9')
 				str++;
 		}
-		return (ft_is_strchr("%cspdiuxX", *str));
 	}
+	return (ft_is_strchr("%cspdiuxX", *str));
 }
 
 void	set_flag(const char **ptr, t_info *info)
@@ -102,7 +102,7 @@ void	set_prec(const char **ptr, t_info *info, va_list ap)
 		else if ('0' <= **ptr && **ptr <= '9')
 		{
 			info->prec = ft_atoi(*ptr);
-			while ('0' <= **ptr && *ptr <= '9')
+			while ('0' <= **ptr && **ptr <= '9')
 				(*ptr)++;
 		}
 	}
@@ -123,5 +123,6 @@ bool	set_info(const char **ptr, t_info *info, va_list ap)
 	set_width(ptr, info, ap);
 	set_prec(ptr, info, ap);
 	info->spec = **ptr;
+	printf("\nzero: %d\nminus: %d\nwidth: %d\ndot: %d\nprec: %d\nspec: %c\n\n", info->zero, info->minus, info->width, info->dot, info->prec, info->spec);
 	return (true);
 }

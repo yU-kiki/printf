@@ -18,8 +18,9 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <limits.h>
+# include <stdio.h>
 
-typedef struct s_info
+typedef struct	s_info
 {
 	bool	zero;
 	bool	minus;
@@ -37,4 +38,4 @@ int				ft_putchar(char c);
 bool			ft_is_strchr(char *str, char c);
 int				ft_atoi(const char *str);
 
-#endif 
+#endif
