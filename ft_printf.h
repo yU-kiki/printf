@@ -35,5 +35,6 @@ bool			set_info(const char **ptr, t_info *info, va_list ap);
 
 int				ft_putchar(char c);
 bool			ft_is_strchr(char *str, char c);
+int				ft_atoi(const char *str);
 
 #endif 

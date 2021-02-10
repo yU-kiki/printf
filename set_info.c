@@ -78,7 +78,35 @@ void	set_width(const char **ptr, t_info *info, va_list ap)
 		while ('0' <= **ptr && **ptr <= '9')
 			(*ptr)++;
 	}
-}	
+}
+
+void	set_prec(const char **ptr, t_info *info, va_list ap)
+{
+	int	tmp;
+
+	if (**ptr == '.')
+	{
+		info->dot = true;
+		(*ptr)++;
+		if (**ptr == '*')
+		{
+			if ((tmp = (int)va_arg(ap, int)) < 0)
+			{
+				info->dot = false;
+				info->prec = 0;
+			}
+			else
+				info->prec = tmp;
+			(*ptr)++;
+		}
+		else if ('0' <= **ptr && **ptr <= '9')
+		{
+			info->prec = ft_atoi(*ptr);
+			while ('0' <= **ptr && *ptr <= '9')
+				(*ptr)++;
+		}
+	}
+}
 
 bool	set_info(const char **ptr, t_info *info, va_list ap)
 {
@@ -93,7 +121,7 @@ bool	set_info(const char **ptr, t_info *info, va_list ap)
 	info->spec = 0;
 	set_flag(ptr, info);
 	set_width(ptr, info, ap);
-	set_precision(ptr, info, ap);
+	set_prec(ptr, info, ap);
 	info->spec = **ptr;
 	return (true);
 }
