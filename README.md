@@ -18,7 +18,7 @@ This implementation of printf supports the following:
   <tr>
     <td>
       |flags|
-      |--------|
+      --------
       |`0`|
       |`-`|
     </td>
