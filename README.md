@@ -16,6 +16,18 @@ This implementation of printf supports the following:
 
 <table>
 <tr>
+<td>
+ 
+| Flags field            |
+| ---------------------- |
+| `#` &ensp; (hash)      |
+| `0` &ensp; (zero)      |
+| ` ` ` ` &ensp; (space) |
+| `+` &ensp; (plus)      |
+| `-` &ensp; (minus)     |
+
+
+</td>
 | TH1 | TH2 |
 ----|---- 
 | TD1 | TD3 |
