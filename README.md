@@ -65,7 +65,7 @@ This implementation of printf supports the following:
   </tr>
 </table>
 
-## Example
+## Example:
 
 ```
 ft_printf("%s", "42tokyo");
