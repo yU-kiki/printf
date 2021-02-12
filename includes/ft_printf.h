@@ -34,9 +34,14 @@ int				ft_printf(const char *fmt, ...);
 
 bool			set_info(const char **ptr, t_info *info, va_list ap);
 int				info_case_c(char c, t_info info);
+int				info_case_s(char *src, t_info info);
 
 int				ft_putchar(char c);
+int				ft_putstr(char *str);
+int				ft_strlen(const char *src);
 bool			ft_is_strchr(char *str, char c);
+char			*ft_strdup(const char *src);
+char			*ft_strndup(const char *src, int n);
 int				ft_atoi(const char *str);
 
 #endif

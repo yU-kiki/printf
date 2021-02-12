@@ -14,7 +14,7 @@
 
 static bool	check_format(const char *str)
 {
-	while (*str == '-' || *str == '0')
+	while (*str == '-' || *str == '0')//--0とかのときどうする？
 		str++;
 	if (*str == '*')
 		str++;
@@ -27,6 +27,8 @@ static bool	check_format(const char *str)
 	{
 		str++;
 		if (*str == '*')
+			str++;
+		else if (*str == '-')
 			str++;
 		else
 		{
@@ -91,20 +93,21 @@ static void	set_prec(const char **ptr, t_info *info, va_list ap)
 		if (**ptr == '*')
 		{
 			if ((tmp = (int)va_arg(ap, int)) < 0)
-			{
 				info->dot = false;
-				info->prec = 0;
-			}
 			else
 				info->prec = tmp;
 			(*ptr)++;
 		}
+		else if (**ptr == '-')
+			info->prec = -1;
 		else if ('0' <= **ptr && **ptr <= '9')
 		{
 			info->prec = ft_atoi(*ptr);
 			while ('0' <= **ptr && **ptr <= '9')
 				(*ptr)++;
 		}
+		else
+			info->prec = 0;
 	}
 }
 
@@ -117,13 +120,13 @@ bool		set_info(const char **ptr, t_info *info, va_list ap)
 	info->minus = false;
 	info->width = 0;//0 か 1　か　−１
 	info->dot = false;
-	info->prec = 0;
+	info->prec = 1;
 	info->spec = 0;
 	set_flag(ptr, info);
 	set_width(ptr, info, ap);
 	set_prec(ptr, info, ap);
 	info->spec = **ptr;
-	//printf("\nzero: %d\nminus: %d\nwidth: %d\ndot: %d\nprec: %d\nspec: %c\n\n", info->zero, info->minus, info->width, info->dot, info->prec, info->spec);
+	printf("\nzero: %d\nminus: %d\nwidth: %d\ndot: %d\nprec: %d\nspec: %c\n\n", info->zero, info->minus, info->width, info->dot, info->prec, info->spec);
 	if (info->width == -1 || info->prec == -1)
 		return (false);
 	return (true);

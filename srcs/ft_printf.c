@@ -23,6 +23,8 @@ static int	ft_proc_per(const char **ptr, va_list ap)
 		len = info_case_c('%', info);
 	if (info.spec == 'c')
 		len = info_case_c((char)va_arg(ap, int), info);
+	if (info.spec == 's')
+		len = info_case_s((char *)va_arg(ap, char *), info);
 	return (len);
 }
 
