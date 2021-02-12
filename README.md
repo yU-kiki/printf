@@ -17,49 +17,39 @@ This implementation of printf supports the following:
 <table>
   <tr>
     <td>
-      
-    |flags|
-    |--------|
-    |`0`|
-    |`-`|
-    
+      |flags|
+      |--------|
+      |`0`|
+      |`-`|
     </td>
     <td>
-    
-    |field width|
-    |--------|
-    |`<number>`|
-    |`*`|
-    
+      |field width|
+      |--------|
+      |`<number>`|
+      |`*`|
     </td>
     <td>
-    
-    |precision|
-    |--------|
-    |`<number>`|
-    |`*`| 
-    
+      |precision|
+      |--------|
+      |`<number>`|
+      |`*`| 
+    </td>
+    <td>  
+      |length modifier|
+      |--------|
     </td>
     <td>
-    
-    |length modifier|
-    |--------|
-    
-    </td>
-    <td>
-    
-    |conversion specifier|
-    |--------|
-    |`%`|
-    |`c`|
-    |`s`|
-    |`p`|
-    |`d`|
-    |`i`|
-    |`u`|
-    |`x`|
-    |`X`|
-      
+      |conversion specifier|
+      |--------|
+      |`%`|
+      |`c`|
+      |`s`|
+      |`p`|
+      |`d`|
+      |`i`|
+      |`u`|
+      |`x`|
+      |`X`|
     </td>
   </tr>
 </table>
