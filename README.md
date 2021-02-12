@@ -15,13 +15,13 @@ int   ft_printf(const char *fmt, ...)
 This implementation of printf supports the following:
 
 <table>
-  <tr>
-    <td>
-      |flags|
-      --------
-      |`0`|
-      |`-`|
-    </td>
+<tr>
+<td>
+|flags|
+--------
+|`0`|
+|`-`|
+</td>
     <td>
       |field width|
       |--------|
