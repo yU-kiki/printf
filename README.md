@@ -28,6 +28,10 @@ This implementation of printf supports the following:
 
 
 </td>
+| TH1 | TH2 |
+----|---- 
+| TD1 | TD3 |
+| TD2 | TD4 |
 <td>
 | TH1 | TH2 |
 ----|---- 
