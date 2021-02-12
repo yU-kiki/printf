@@ -7,6 +7,7 @@ A recreation of the standard C library's printf function
 ```
 int   ft_printf(const char *fmt, ...)
 ```
+
 ## Usage:
 
 #### Syntax for format specifies:
@@ -63,3 +64,15 @@ This implementation of printf supports the following:
    </td>
   </tr>
 </table>
+
+## Example
+
+```
+ft_printf("%s", "42tokyo");
+>> 42tokyo
+```
+
+```
+ft_printf("[%*.*d]", -10, 5, 1234567);
+>> [1234567   ]
+```
