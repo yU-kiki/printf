@@ -16,6 +16,10 @@ This implementation of printf supports the following:
 
 <table>
 <tr>
+| TH1 | TH2 |
+----|---- 
+| TD1 | TD3 |
+| TD2 | TD4 |
 <td>
 |flags|
 --------
