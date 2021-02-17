@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   info_case_xX.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vagrant </var/mail/vagrant>                +#+  +:+       +#+        */
+/*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 23:59:49 by vagrant           #+#    #+#             */
-/*   Updated: 2021/02/17 23:59:49 by vagrant          ###   ########.fr       */
+/*   Created: 2021/02/17 23:59:49 by yikeda            #+#    #+#             */
+/*   Updated: 2021/02/17 23:59:49 by yikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char get_numstr_xX(unsigned int n, char a_size, t_info info)
+static char	get_numstr_x(unsigned int n, char a_size, t_info info)
 {
 	char	*ret;
 	char	*zeros;
@@ -35,7 +35,7 @@ static char get_numstr_xX(unsigned int n, char a_size, t_info info)
 	return (freeturn(&zeros, &tmp, ret));
 }
 
-static int	ft_width_xX(t_info info, char *num_str)
+static int	ft_width_x(t_info info, char *num_str)
 {
 	int		len;
 	int		digits;
@@ -58,15 +58,15 @@ static int	ft_width_xX(t_info info, char *num_str)
 	return (len);
 }
 
-int			info_case_xX(unsigned int n, char a_size, t_info info)
+int			info_case_x(unsigned int n, char a_size, t_info info)
 {
 	char	*num_str;
 	int		len;
 
-	if (!(num_str = get_numstr_xX(n, a_size, info)))
+	if (!(num_str = get_numstr_x(n, a_size, info)))
 		return (-1);
 	len = 0;
-	len += ft_width_xX(info, num_str);
+	len += ft_width_x(info, num_str);
 	free(num_str);
 	return (len);
 }

@@ -17,7 +17,7 @@ SRCNAME = ft_printf.c\
 			info_case_p.c\
 			info_case_di.c\
 			info_case_u.c\
-			info_case_xX.c\
+			info_case_x.c\
 		  ft_putchar.c\
 			ft_putstr.c\
 			ft_strlen.c\

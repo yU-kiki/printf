@@ -12,12 +12,15 @@
 
 #include "ft_printf.h"
 
-static char *prec_str(char *str, t_info info)
+static char	*prec_str(char *str, t_info info)
 {
+	int		prec;
+
+	prec = info.prec;
 	if (!str)
-		return (info.dot ? ft_strndup("(null)", info.prec) : ft_strdup("(null)"));
+		return (info.dot ? ft_strndup("(null)", prec) : ft_strdup("(null)"));
 	else
-		return (info.dot ? ft_strndup(str, info.prec) : ft_strdup(str));
+		return (info.dot ? ft_strndup(str, prec) : ft_strdup(str));
 }
 
 int			info_case_s(char *src, t_info info)

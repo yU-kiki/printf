@@ -38,7 +38,7 @@ int				info_case_s(char *src, t_info info);
 int				info_case_p(void *ptr, t_info info);
 int				info_case_di(int n, t_info info);
 int				info_case_u(unsigned int n, t_info info);
-int				info_case_xX(unsigned int n, char a_size, t_info info);
+int				info_case_x(unsigned int n, char a_size, t_info info);
 
 int				ft_putchar(char c);
 int				ft_putstr(char *str);
