@@ -17,6 +17,7 @@ SRCNAME = ft_printf.c\
 			info_case_p.c\
 			info_case_di.c\
 			info_case_u.c\
+			info_case_xX.c\
 		  ft_putchar.c\
 			ft_putstr.c\
 			ft_strlen.c\
@@ -26,6 +27,7 @@ SRCNAME = ft_printf.c\
 			ft_strjoin.c\
 			ft_itoa.c\
 			ft_itoa_us.c\
+			ft_itoa_hex.c\
 			get_digits.c\
 			get_digits_base.c\
 			ft_atoi.c\

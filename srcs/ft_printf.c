@@ -31,6 +31,8 @@ static int	ft_proc_per(const char **ptr, va_list ap)
 		len = info_case_di((int)va_arg(ap, int), info);
 	if (info.spec == 'u')
 		len = info_case_u((unsigned int)va_arg(ap, unsigned int), info);
+	if (info.spec == 'x' || info.spec == 'X')
+		len = info_case_xX((unsigned int)va_arg(ap, unsigned int), info.spec - 23, info);
 	return (len);
 }
 

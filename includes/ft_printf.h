@@ -38,6 +38,7 @@ int				info_case_s(char *src, t_info info);
 int				info_case_p(void *ptr, t_info info);
 int				info_case_di(int n, t_info info);
 int				info_case_u(unsigned int n, t_info info);
+int				info_case_xX(unsigned int n, char a_size, t_info info);
 
 int				ft_putchar(char c);
 int				ft_putstr(char *str);
@@ -48,6 +49,7 @@ char			*ft_strndup(const char *src, int n);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_itoa(int nbr);
 char			*ft_itoa_us(unsigned int n);
+char			*ft_itoa_hex(unsigned int n, char a_size);
 int				get_digits(unsigned int n);
 int				get_digits_base(unsigned int n, unsigned int base);
 int				ft_atoi(const char *str);

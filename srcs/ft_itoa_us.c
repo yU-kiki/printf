@@ -21,13 +21,13 @@ char	*ft_itoa_us(unsigned int n)
 	len = get_digits(n);
 	if (!(dst = malloc(len + 1)))
 		return (NULL);
-	i = 0;
-	while (i < len)
+	i = len - 1;
+	while (i >= 0)
 	{
 		dst[i] = n % 10 + '0';
 		n /= 10;
-		i++;
+		i--;
 	}
-	dst[i] = '\0';
+	dst[len] = '\0';
 	return (dst);
 }
