@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: vagrant </var/mail/vagrant>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 17:24:36 by yikeda            #+#    #+#             */
-/*   Updated: 2021/02/11 17:24:36 by yikeda           ###   ########.fr       */
+/*   Created: 2021/02/17 19:14:50 by vagrant           #+#    #+#             */
+/*   Updated: 2021/02/17 19:14:50 by vagrant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
+	size_t	i;
+	size_t	j;
 	char	*dst;
-	int		i;
 
-	i = 0;
-	if (!(dst = malloc(sizeof(char) * (ft_strlen(src) + 1))))
+	if (!s1 || !s2)
 		return (NULL);
-	while (src[i] != '\0')
+	if (!(dst = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		dst[i] = src[i];
+		dst[i] = s1[i];
 		i++;
 	}
-	dst[i] = '\0';
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		dst[i + j] = s2[j];
+		j++;
+	}
+	dst[i + j] = '\0';
 	return (dst);
 }

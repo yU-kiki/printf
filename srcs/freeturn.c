@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   freeturn.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: vagrant </var/mail/vagrant>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 17:24:36 by yikeda            #+#    #+#             */
-/*   Updated: 2021/02/11 17:24:36 by yikeda           ###   ########.fr       */
+/*   Created: 2021/02/17 19:14:05 by vagrant           #+#    #+#             */
+/*   Updated: 2021/02/17 19:14:05 by vagrant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *src)
+char	*freeturn(char **s1, char **s2, char *ret)
 {
-	char	*dst;
-	int		i;
-
-	i = 0;
-	if (!(dst = malloc(sizeof(char) * (ft_strlen(src) + 1))))
-		return (NULL);
-	while (src[i] != '\0')
+	if (s1)
 	{
-		dst[i] = src[i];
-		i++;
+		free(*s1);
+		*s1 = NULL;
 	}
-	dst[i] = '\0';
-	return (dst);
+	if (s2)
+	{
+		free(*s2);
+		*s2 = NULL;
+	}
+	return (ret);
 }

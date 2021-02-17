@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_us.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: vagrant </var/mail/vagrant>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 17:24:36 by yikeda            #+#    #+#             */
-/*   Updated: 2021/02/11 17:24:36 by yikeda           ###   ########.fr       */
+/*   Created: 2021/02/17 19:15:16 by vagrant           #+#    #+#             */
+/*   Updated: 2021/02/17 19:15:16 by vagrant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_itoa_us(unsigned int n)
 {
 	char	*dst;
+	size_t	len;
 	int		i;
 
-	i = 0;
-	if (!(dst = malloc(sizeof(char) * (ft_strlen(src) + 1))))
+	len = get_digits(n);
+	if (!(dst = malloc(len + 1)))
 		return (NULL);
-	while (src[i] != '\0')
+	i = 0;
+	while (i < len)
 	{
-		dst[i] = src[i];
+		dst[i] = n % 10 + '0';
+		n /= 10;
 		i++;
 	}
 	dst[i] = '\0';

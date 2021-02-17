@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   get_digits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: vagrant </var/mail/vagrant>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 17:24:36 by yikeda            #+#    #+#             */
-/*   Updated: 2021/02/11 17:24:36 by yikeda           ###   ########.fr       */
+/*   Created: 2021/02/17 19:13:50 by vagrant           #+#    #+#             */
+/*   Updated: 2021/02/17 19:13:50 by vagrant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *src)
+int		get_digits(unsigned int n)
 {
-	char	*dst;
-	int		i;
+	int		digits;
 
-	i = 0;
-	if (!(dst = malloc(sizeof(char) * (ft_strlen(src) + 1))))
-		return (NULL);
-	while (src[i] != '\0')
+	digits = 1;
+	while (n >= 10)
 	{
-		dst[i] = src[i];
-		i++;
+		digits++;
+		n /= 10;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (digits);
 }

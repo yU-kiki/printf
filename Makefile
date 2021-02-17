@@ -14,13 +14,22 @@ SRCNAME = ft_printf.c\
 		  set_info.c\
 		  info_case_c.c\
 			info_case_s.c\
+			info_case_p.c\
+			info_case_di.c\
+			info_case_u.c\
 		  ft_putchar.c\
 			ft_putstr.c\
 			ft_strlen.c\
 		  ft_is_strchr.c\
 			ft_strdup.c\
 			ft_strndup.c\
-			ft_atoi.c
+			ft_strjoin.c\
+			ft_itoa.c\
+			ft_itoa_us.c\
+			get_digits.c\
+			get_digits_base.c\
+			ft_atoi.c\
+			freeturn.c
 
 SRCS = $(addprefix $(SRCDIR),$(SRCNAME))
 
