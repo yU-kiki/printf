@@ -41,12 +41,39 @@ static int	*get_numstr_di(int n, t_info info)
 	return (freeturn(&zeros, &tmp, ret));
 }
 
+static int	ft_width_di(int n, t_info info, char *num_str)
+{
+	int		len;
+	int		digits;
+
+	digits = ft_strlen(num_str);
+	len = 0;
+	if (info.zero && !info.dot)
+	{
+		len += (n < 0 ? ft_putchar(*num_str) : 0);
+		while (len < info.width - digits + (n < 0 ? 1 : 0))
+			len += ft_putchar('0');
+		len += ft_putstr(n < 0 ? &num_str[1] : &num_str[0])
+	}
+	else
+	{
+		len += (info.minus ? ft_putstr(num_str) : 0);
+		while (len < (info.minus ? info.width : info.width - digits))
+			len += ft_putchar(' ');
+		len += (info.minus ? 0 : ft_putstr(num_str));
+	}
+	return (len);
+}
+
 int			info_case_di(int n, t_info info)
 {
-	char	*num
+	char	*num_str;
 	int		len;
 
 	if (!(num_str = get_numstr_di(n, info)))
 		return (-1);
 	len = 0;
+	len += ft_width_di(n, info, num_str);
+	free(num_str);
+	return (len);
 }
