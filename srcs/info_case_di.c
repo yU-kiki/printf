@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	*get_numstr_di(int n, t_info info)
+static char	*get_numstr_di(int n, t_info info)
 {
 	char	*ret;
 	char	*zeros;
@@ -31,7 +31,7 @@ static int	*get_numstr_di(int n, t_info info)
 	{
 		if (i == 0 && n < 0)
 			zeros[i] = '-';
-		else 
+		else
 			zeros[i] = '0';
 		i++;
 	}
@@ -53,7 +53,7 @@ static int	ft_width_di(int n, t_info info, char *num_str)
 		len += (n < 0 ? ft_putchar(*num_str) : 0);
 		while (len < info.width - digits + (n < 0 ? 1 : 0))
 			len += ft_putchar('0');
-		len += ft_putstr(n < 0 ? &num_str[1] : &num_str[0])
+		len += ft_putstr(n < 0 ? &num_str[1] : &num_str[0]);
 	}
 	else
 	{

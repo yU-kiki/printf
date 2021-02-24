@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int		len_p(uintptr_t n, t_info info)
+static int		len_p(uintptr_t n)
 {
 	int		len;
 
@@ -25,13 +25,13 @@ static int		len_p(uintptr_t n, t_info info)
 	return (len + 2);
 }
 
-static char		*get_numstr_p(uintptr_t n, t_info info)
+static char		*get_numstr_p(uintptr_t n)
 {
 	char	*dst;
 	int		len;
 	int		i;
 
-	len = len_p(n, info);
+	len = len_p(n);
 	if (!(dst = malloc(len + 1)))
 		return (NULL);
 	i = 0;
@@ -65,7 +65,7 @@ int				info_case_p(void *ptr, t_info info)
 	}
 	else if (info.dot)
 		return (-1);
-	else if (!(num_str = get_numstr_p((uintptr_t)ptr, info)))
+	else if (!(num_str = get_numstr_p((uintptr_t)ptr)))
 		return (-1);
 	digits = ft_strlen(num_str);
 	len = 0;

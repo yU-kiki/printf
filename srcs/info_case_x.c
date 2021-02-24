@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static char	get_numstr_x(unsigned int n, char a_size, t_info info)
+static char	*get_numstr_x(unsigned int n, char a_size, t_info info)
 {
 	char	*ret;
 	char	*zeros;
