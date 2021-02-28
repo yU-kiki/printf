@@ -19,9 +19,7 @@ int		info_case_c(char c, t_info info)
 
 	if (info.width == INT_MAX)
 		return (-1);
-	if (info.zero == true || info.dot == true)
-		return (-1);
-	space = ' ';
+	space = (info.zero ? '0' : ' ');
 	len = 0;
 	len += (info.minus ? ft_putchar(c) : 0);
 	while (len < (info.minus ? info.width : info.width - 1))

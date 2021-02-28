@@ -63,8 +63,6 @@ int				info_case_p(void *ptr, t_info info)
 		if (!(num_str = ft_strdup("0x")))
 			return (-1);
 	}
-	else if (info.dot)
-		return (-1);
 	else if (!(num_str = get_numstr_p((uintptr_t)ptr)))
 		return (-1);
 	digits = ft_strlen(num_str);
