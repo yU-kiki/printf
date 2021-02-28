@@ -3,3 +3,6 @@ test/
 libftprintf.a
 *.o
 .vscode/
+printf_tester/
+pft_2019/
+42TESTERS-PRINTF/

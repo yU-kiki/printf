@@ -6,7 +6,7 @@
 /*   By: yikeda <yikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:45:03 by yikeda            #+#    #+#             */
-/*   Updated: 2021/02/10 15:52:44 by yikeda           ###   ########.fr       */
+/*   Updated: 2021/02/24 15:49:29 by yikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		main(void)
 	int len3 = ft_printf("[%-3c]", 'a');
 	printf("\nlen = %d\n\n", len3);
 
+	system("Leaks a.out");
 	return (0);
 }

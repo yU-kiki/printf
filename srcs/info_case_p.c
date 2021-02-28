@@ -34,21 +34,21 @@ static char		*get_numstr_p(uintptr_t n)
 	len = len_p(n);
 	if (!(dst = malloc(len + 1)))
 		return (NULL);
-	i = 0;
-	while (i < len)
+	i = len - 1;
+	while (i >= 0)
 	{
 		if (i == 0)
 			dst[i] = '0';
-		if (i == 1)
+		else if (i == 1)
 			dst[i] = 'x';
 		else
 		{
 			dst[i] = (n % 16 < 10 ? n % 16 + '0' : n % 16 - 10 + 'a');
 			n /= 16;
 		}
-		i++;
+		i--;
 	}
-	dst[i] = '\0';
+	dst[len] = '\0';
 	return (dst);
 }
 
